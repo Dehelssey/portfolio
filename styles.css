@@ -1,12 +1,10 @@
-:root {
-  --pink: #FF6977;
-  --green: #00FFC8;
-}
 /* if you use light mode on your OS */
 @media screen and (prefers-color-scheme: light) {
 	:root {
     --bg: #FFF7F7;
     --fg: #273DD6;
+    --pink: #FF6977;
+    --green: #00FFC8;
   }
 	.light {
 		display: none;
@@ -24,6 +22,8 @@
 	:root {
     --bg: #072A2A;
     --fg: #FFF7F7;
+    --pink: var(--bg);
+    --green: var(--bg);
 	}
 	.dark {
 		display: none;
@@ -77,6 +77,8 @@ input.light:checked::before {
 .light:checked ~ * {
   --bg: #FFF7F7;
   --fg: #273DD6;
+  --pink: #FF6977;
+  --green: #00FFC8;
 }
 
 /* if you activate dark mode */
@@ -89,6 +91,8 @@ input.dark:checked::before {
 .dark:checked + input ~ * {
   --bg: #072A2A;
   --fg: #FEF7F7;
+  --pink: var(--bg);
+  --green: var(--bg);
 }
 
 :-webkit-scrollbar {
@@ -176,7 +180,7 @@ section {
 
 a {
   color: var(--fg);
-  text-decoration: underline 2px solid var(--pink);
+  text-decoration: underline 2px solid;
   position: relative;
 }
 
