@@ -1,0 +1,98 @@
+:root {
+  --fg: #273DD6;
+  --bg: #FFF7F7;
+  --pink: #FF6977;
+  --green: #00FFC8;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+  font-size: 1.25rem;
+  line-height: 160%;
+}
+
+h1, h2, h3, h4, .button {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 800;
+  line-height: 80%;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+section {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  width: 80%;
+  max-width: 1280px;
+  min-width: 300px;
+  animation-name: scollAnimation;
+  animation-duration: 4ms;
+  animation-direction: alternate;
+  animation-timeline: view();
+  grid-gap: 40px;
+}
+
+.reverse {
+  --fg: #273DD6;
+  --bg: #FFF7F7;
+}
+
+@keyframes scollAnimation {
+  from {
+    transform: scale(.9);
+    opacity:.4;
+  }
+ 40% {
+    transform: scale(1);
+    opacity:1;
+  }
+ 60% {
+    transform: scale(1);
+    opacity:1;
+  }
+  to {
+    transform: scale(.9);
+    opacity:.4;
+  }
+  
+}
+
+a {
+  color: var(--fg);
+  text-decoration: underline 2px solid var(--pink);
+  position: relative;
+}
+
+a:not(.button):hover {
+  background: var(--green);
+  text-decoration-color: var(--fg);
+}
+
+.button {
+  padding: 16px;
+  outline: 2px solid var(--fg);
+  box-shadow: 4px 4px 0 2px;
+  transition: all .1s ease;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-size: 1.5rem;
+}
+
+.button:hover {
+  box-shadow: 5px 5px var(--pink), 5px 5px 0 2px, 10px 10px var(--green), 10px 10px 0 2px;
+  transform: translate(-10px, -10px)
+}
+
+.button:active {
+  box-shadow: 0 0 40px var(--pink);
+  transform: translate(0,0)
+}
